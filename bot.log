@@ -1,0 +1,53 @@
+ERROR    [2017-12-17 23:40:13,371] An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 270, in process_update
+    handler.handle_update(update, self)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "main.py", line 26, in add_new_player
+    sql.add_player(update.message.from_user.id)
+  File "<string>", line 2, in add_player
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 470, in new_func
+    finally: db_session.__exit__(exc_type, exc, tb)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 436, in __exit__
+    commit()
+  File "<string>", line 2, in commit
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/utils/utils.py", line 58, in cut_traceback
+    return func(*args, **kwargs)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 331, in commit
+    rollback_and_reraise(sys.exc_info())
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 320, in rollback_and_reraise
+    reraise(*exc_info)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/utils/utils.py", line 87, in reraise
+    try: raise exc.with_traceback(tb)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 329, in commit
+    cache.flush()
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 1736, in flush
+    if obj is not None: obj._save_()
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 5019, in _save_
+    if status == 'created': obj._save_created_()
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/orm/core.py", line 4864, in _save_created_
+    % (obj, e.__class__.__name__, msg), e)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/pony/utils/utils.py", line 98, in throw
+    raise exc
+pony.orm.core.TransactionIntegrityError: Object Player[198902690] cannot be stored in the database. IntegrityError: UNIQUE constraint failed: Player.chat_id
+WARNING  [2017-12-17 23:42:48,185] Exiting immediately!
+WARNING  [2017-12-17 23:43:41,666] Exiting immediately!
+WARNING  [2017-12-17 23:45:11,137] Exiting immediately!
+WARNING  [2017-12-17 23:45:56,802] Exiting immediately!
+ERROR    [2017-12-17 23:46:12,686] An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 270, in process_update
+    handler.handle_update(update, self)
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "main.py", line 78, in alive
+    updater.idle()
+  File "/home/anton/PycharmProjects/VictorinaBot/.env/lib/python3.5/site-packages/telegram/ext/updater.py", line 467, in idle
+    signal(sig, self.signal_handler)
+  File "/usr/lib/python3.5/signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+ValueError: signal only works in main thread
+WARNING  [2017-12-17 23:46:16,285] Exiting immediately!
+WARNING  [2017-12-17 23:46:43,996] Exiting immediately!
+WARNING  [2017-12-17 23:47:52,900] Exiting immediately!
