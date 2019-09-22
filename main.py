@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import hints
 import sql
-import information
 import pymorphy2
 
 morph = pymorphy2.MorphAnalyzer()
@@ -77,10 +76,12 @@ def alive(bot, update):
     updater.start_polling()
     updater.idle()
 
-
+#INSERT TOKEN AND PROXY HERE
 def start_bot():
     global updater
-    updater = Updater(information.token)
+    PROXY = {'proxy_url': 'your_proxy_url',
+    'urllib3_proxy_kwargs': {'username': 'your_username', 'password': 'your_password'}}
+    updater = Updater('YOUR_TOKEN', request_kwargs=PROXY)
     dp = updater.dispatcher
 
     hello_handler = CommandHandler('start', hello)
